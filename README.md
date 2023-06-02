@@ -17,7 +17,7 @@ To install and run the Nodemailer Mail Sender, follow these steps:
 
 1.  Clone the repository:
 
-    $ git clone https://github.com/your-username/nodemailer-mail-sender.git
+    $ git clone [https://github.com/your-username/nodemailer-mail-sender.git](https://github.com/dxtaner/Nodejs-SenderMailServices)
 
 3.  Navigate to the project directory:
 
