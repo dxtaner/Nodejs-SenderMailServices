@@ -1,61 +1,47 @@
-Nodemailer Mail Sender
-======================
+Node.js Email Sender
+====================
 
 Prerequisites
 -------------
 
-Before running the application, make sure you have the following:
+*   Node.js installed on your machine. You can download Node.js from the official website: [https://nodejs.org](https://nodejs.org)
+*   Gmail account credentials (email address and password).
 
-*   Node.js installed on your machine
-*   Gmail account credentials (email address and password)
-*   PDF file named "cv.pdf" in the application directory
+Setup
+-----
 
-Installation
-------------
+1.  Clone the repository or download the script file.
+2.  Install the required dependencies by running the following command in the project directory:
 
-To install and run the Nodemailer Mail Sender, follow these steps:
+    npm install nodemailer dotenv
 
-1.  Clone the repository:
+3.  Create a `.env` file in the project directory and add the following lines, replacing `EMAIL_ADDRESS` and `EMAIL_PASSWORD` with your Gmail account credentials:
 
-    $ git clone [https://github.com/your-username/nodemailer-mail-sender.git](https://github.com/dxtaner/Nodejs-SenderMailServices)
+    EMAIL_ADDRESS=your-email@gmail.com
+    EMAIL_PASSWORD=your-email-password
 
-3.  Navigate to the project directory:
-
-    $ cd nodemailer-mail-sender
-
-5.  Install the dependencies:
-
-    $ npm install
-
-7.  Configure the email account:
-
-*   Open the `.env` file.
-*   Replace the `EMAIL_ADDRESS` and `EMAIL_PASSWORD` placeholders with your Gmail account credentials.
-
-9.  Start the application:
-
-    $ node app.js
-
-11.  The application will send an email with the PDF attachment to the specified recipients.
+4.  Place the PDF file you want to attach in the same directory as the script and name it `cv.pdf`.
 
 Usage
 -----
 
-To use the Nodemailer Mail Sender, follow these steps:
+1.  Open the terminal or command prompt and navigate to the project directory.
+2.  Run the script using the following command:
 
-1.  Make sure the application is running.
-2.  Modify the `subject`, `text`, and `tomail` variables in the `app.js` file to customize the email subject, message, and recipients.
-3.  Place the PDF file you want to attach in the application directory and name it "cv.pdf".
-4.  Save the changes to the `app.js` file.
-5.  Restart the application by running `node app.js`.
-6.  The application will send an email with the updated information and the PDF attachment to the specified recipients.
+    node script.js
 
-Contributing
-------------
+The script will send an email with the attached PDF file to the specified recipients.
 
-Contributions to the Nodemailer Mail Sender are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the GitHub repository.
+*   Modify the `tomail` variable in the script to include the email addresses you want to send the email to.
+*   Update the `subject` and `text` variables in the script with your desired email subject and message.
 
-License
--------
+Additional Details
+------------------
 
-Nodemailer Mail Sender is open-source software licensed under the MIT License.
+The `mailTransporter.sendMail()` function in the script uses Nodemailer to send the email. It configures the transporter with Gmail as the email service provider and uses the credentials provided in the `.env` file for authentication.
+
+The script reads the contents of the `cv.pdf` file using the `fs.readFile()` function, which should be present in the same directory as the script.
+
+Make sure to handle any errors that may occur during the email sending process and provide appropriate error messages or notifications to the user.
+
+That's it! You have successfully set up and run the Node.js email sender script. You should see the output indicating whether the email was sent successfully or if an error occurred.
